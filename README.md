@@ -1,2 +1,3 @@
-# py-project-template
-Template for Python projects
+# Template for Python projects
+
+Common files and configurations for most Pythoh projects
