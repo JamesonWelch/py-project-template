@@ -2,7 +2,6 @@
 
 # Get the full path to the directory the script is in
 source_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-echo "The script is located in: $source_dir"
 target_dir="$1"
 
 echo "Working in $target_dir"
