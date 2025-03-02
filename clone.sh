@@ -1,0 +1,24 @@
+#!/bin/bash
+
+source_dir="
+target_dir="$1"
+
+echo "Working in $target_dir"
+
+# the -z is an arg for the test commant, a.k.a. `[]`, to check "if str empty"
+if [ -z "$target_dir" ]; then
+    echo "Error: No target directory specified"
+    exit 1
+fi
+
+
+files_to_clone=("pyproject.toml")
+
+for file in "${files_to_check[@]}"; do
+    if [ -e "$file" ]; then
+        cp $file "$target_dir/$file"
+        echo "Copied $file to $target_dir"
+    else
+        echo "$file does not exist"
+    fi
+done
