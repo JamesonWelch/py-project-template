@@ -14,13 +14,13 @@ if [ -z "$target_dir" ]; then
 fi
 
 
-files_to_clone=("pyproject.toml")
+py_files_to_clone=("pyproject.toml")
 
-for file in "${files_to_check[@]}"; do
-    if [ -e "$file" ]; then
-        cp $file "$target_dir/$file"
+for file in "${py_files_to_clone[@]}"; do
+    if [ -e "$source_dir/$file" ]; then
+        cp "$source_dir/$file" "$target_dir/$file"
         echo "Copied $file to $target_dir"
     else
-        echo "$file does not exist"
+        echo "$source_dir/$file does not exist"
     fi
 done
